@@ -1,0 +1,42 @@
+h1 {
+    color: red;
+
+    text-align: center;
+
+    animation: myAnime 3s ease-in infinite;
+    animation: name duration timing-function delay iteration-count direction fill-mode;
+
+
+}
+
+@keyframes myAnime {
+
+    0% {
+        color: red;
+    }
+
+    20% {
+        color: yellow;
+    }
+
+    40% {
+        color: pink;
+    }
+
+    60% {
+        color: gray;
+    }
+
+    80% {
+        color: blue;
+    }
+
+    100% {
+        color: green;
+    }
+    
+}
+
+i {
+    margin-left: -25px;
+}

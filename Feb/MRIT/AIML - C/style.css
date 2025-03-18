@@ -1,0 +1,72 @@
+body {
+    background-color: pink;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#first {
+    /* background-color: red; */
+    background-image: url('https://shivambansal96.github.io/Coffee-House-HTML-CSS-4/images/top-image.jpg');
+
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 300px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+input {
+    background-color: black;
+
+    width: 40%;
+    padding-left: 10px;
+    height: 15%;
+    border: none;
+    outline: none;
+    border-radius: 12px;
+}
+
+input::placeholder {
+    color: white;
+}
+
+img {
+    height: 150px;
+    width: 150px;
+
+    border-radius: 50%;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    
+}
+
+/* img:hover {
+    transition: 3s;
+} */
+
+#second {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#second p {
+    text-align: center;
+    font-weight: bold;
+}
+
+#third, #fourth {
+    color: brown;
+    background-color: rgb(248, 132, 151);
+
+    padding: 20px;
+    border-radius: 12px;
+}
+
+

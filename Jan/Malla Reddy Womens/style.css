@@ -1,0 +1,20 @@
+
+h1 {
+    color: yellow;
+}
+
+.heading-odd {
+    color: red;
+}
+
+.heading-even {
+    color: gray;
+}
+
+#head1 {
+    color: skyblue;
+}
+
+#head2 {
+    color: black;
+}

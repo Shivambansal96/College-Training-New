@@ -1,0 +1,1668 @@
+Telegram: @PLACEMENTLELO  
+TCS NQT – Advanced Coding 
+ 
+ 
+Example 1: Program to print half pyramid using * 
+* 
+* * 
+* * * 
+* * * * 
+* * * * * 
+Source Code 
+#include <stdio.h> 
+int main() 
+{ 
+    int i, j, rows; 
+ 
+    printf("Enter number of rows: "); 
+    scanf("%d",&rows); 
+ 
+    for(i=1; i<=rows; ++i) 
+    { 
+        for(j=1; j<=i; ++j) 
+
+Telegram: @PLACEMENTLELO  
+        { 
+            printf("* "); 
+        } 
+        printf("\n"); 
+    } 
+    return 0; 
+} 
+ 
+ 
+Example 2: Program to print half pyramid a using 
+numbers 
+1 
+1 2 
+1 2 3 
+1 2 3 4 
+1 2 3 4 5 
+Source Code 
+#include <stdio.h> 
+int main() 
+{ 
+
+Telegram: @PLACEMENTLELO  
+    int i, j, rows; 
+ 
+    printf("Enter number of rows: "); 
+    scanf("%d",&rows); 
+ 
+    for(i=1; i<=rows; ++i) 
+    { 
+        for(j=1; j<=i; ++j) 
+        { 
+            printf("%d ",j); 
+        } 
+        printf("\n"); 
+    } 
+    return 0; 
+} 
+ 
+Example 3: Program to print half pyramid using 
+alphabets 
+A 
+B B 
+C C C 
+D D D D 
+
+Telegram: @PLACEMENTLELO  
+E E E E E 
+Source Code 
+#include <stdio.h> 
+int main() 
+{ 
+    int i, j; 
+    char input, alphabet = 'A'; 
+ 
+    printf("Enter the uppercase character you want to print in 
+last row: "); 
+    scanf("%c",&input); 
+ 
+    for(i=1; i <= (input-'A'+1); ++i) 
+    { 
+        for(j=1;j<=i;++j) 
+        { 
+            printf("%c", alphabet); 
+        } 
+        ++alphabet; 
+ 
+        printf("\n"); 
+    } 
+    return 0; 
+} 
+
+Telegram: @PLACEMENTLELO  
+ 
+Example 4: Inverted half pyramid using * 
+* * * * * 
+* * * * 
+* * *  
+* * 
+* 
+Source Code 
+#include <stdio.h> 
+int main() 
+{ 
+    int i, j, rows; 
+ 
+    printf("Enter number of rows: "); 
+    scanf("%d",&rows); 
+ 
+    for(i=rows; i>=1; --i) 
+    { 
+        for(j=1; j<=i; ++j) 
+        { 
+            printf("* "); 
+
+Telegram: @PLACEMENTLELO  
+        } 
+        printf("\n"); 
+    } 
+     
+    return 0; 
+} 
+ 
+Example 5: Inverted half pyramid using numbers 
+1 2 3 4 5 
+1 2 3 4  
+1 2 3 
+1 2 
+1 
+Source Code 
+#include <stdio.h> 
+int main() 
+{ 
+    int i, j, rows; 
+ 
+    printf("Enter number of rows: "); 
+
+Telegram: @PLACEMENTLELO  
+    scanf("%d",&rows); 
+ 
+    for(i=rows; i>=1; --i) 
+    { 
+        for(j=1; j<=i; ++j) 
+        { 
+            printf("%d ",j); 
+        } 
+        printf("\n"); 
+    } 
+ 
+    return 0; 
+} 
+ Example 6: Program to print full pyramid using * 
+        * 
+      * * * 
+    * * * * * 
+  * * * * * * * 
+* * * * * * * * * 
+Source Code 
+#include <stdio.h> 
+
+Telegram: @PLACEMENTLELO  
+int main() 
+{ 
+    int i, space, rows, k=0; 
+ 
+    printf("Enter number of rows: "); 
+    scanf("%d",&rows); 
+ 
+    for(i=1; i<=rows; ++i, k=0) 
+    { 
+        for(space=1; space<=rows-i; ++space) 
+        { 
+            printf("  "); 
+        } 
+ 
+        while(k != 2*i-1) 
+        { 
+            printf("* "); 
+            ++k; 
+        } 
+ 
+        printf("\n"); 
+    } 
+     
+    return 0; 
+} 
+
+Telegram: @PLACEMENTLELO  
+Example 7: Program to print pyramid using 
+numbers 
+ 
+        1 
+      2 3 2 
+    3 4 5 4 3 
+  4 5 6 7 6 5 4 
+5 6 7 8 9 8 7 6 5 
+Source Code 
+#include <stdio.h> 
+int main() 
+{ 
+    int i, space, rows, k=0, count = 0, count1 = 0; 
+ 
+    printf("Enter number of rows: "); 
+    scanf("%d",&rows); 
+ 
+    for(i=1; i<=rows; ++i) 
+    { 
+        for(space=1; space <= rows-i; ++space) 
+        { 
+
+Telegram: @PLACEMENTLELO  
+            printf("  "); 
+            ++count; 
+        } 
+ 
+        while(k != 2*i-1) 
+        { 
+            if (count <= rows-1) 
+            { 
+                printf("%d ", i+k); 
+                ++count; 
+            } 
+            else 
+            { 
+                ++count1; 
+                printf("%d ", (i+k-2*count1)); 
+            } 
+            ++k; 
+        } 
+        count1 = count = k = 0; 
+ 
+        printf("\n"); 
+    } 
+    return 0; 
+} 
+Example 8: Inverted full pyramid using * 
+
+Telegram: @PLACEMENTLELO  
+ 
+* * * * * * * * * 
+  * * * * * * * 
+    * * * * * 
+      * * * 
+        * 
+Source Code 
+#include<stdio.h> 
+int main() 
+{ 
+    int rows, i, j, space; 
+ 
+    printf("Enter number of rows: "); 
+    scanf("%d",&rows); 
+ 
+    for(i=rows; i>=1; --i) 
+    { 
+        for(space=0; space < rows-i; ++space) 
+            printf("  "); 
+ 
+        for(j=i; j <= 2*i-1; ++j) 
+
+Telegram: @PLACEMENTLELO  
+            printf("* "); 
+ 
+        for(j=0; j < i-1; ++j) 
+            printf("* "); 
+ 
+        printf("\n"); 
+    } 
+ 
+    return 0; 
+} 
+Example 9: Print Pascal's triangle 
+ 
+           1 
+         1   1 
+       1   2   1 
+     1   3   3    1 
+   1  4    6   4   1 
+ 1  5   10   10  5   1  
+Source Code 
+#include <stdio.h> 
+
+Telegram: @PLACEMENTLELO  
+int main() 
+{ 
+    int rows, coef = 1, space, i, j; 
+ 
+    printf("Enter number of rows: "); 
+    scanf("%d",&rows); 
+ 
+    for(i=0; i<rows; i++) 
+    { 
+        for(space=1; space <= rows-i; space++) 
+            printf("  "); 
+ 
+        for(j=0; j <= i; j++) 
+        { 
+            if (j==0 || i==0) 
+                coef = 1; 
+            else 
+                coef = coef*(i-j+1)/j; 
+ 
+            printf("%4d", coef); 
+        } 
+        printf("\n"); 
+    } 
+ 
+    return 0; 
+
+Telegram: @PLACEMENTLELO  
+} 
+ 
+Example 10: Print Floyd's Triangle. 
+1 
+2 3 
+4 5 6 
+7 8 9 10 
+Source Code 
+#include <stdio.h> 
+int main() 
+{ 
+    int rows, i, j, number= 1; 
+ 
+    printf("Enter number of rows: "); 
+    scanf("%d",&rows); 
+ 
+    for(i=1; i <= rows; i++) 
+    { 
+        for(j=1; j <= i; ++j) 
+        { 
+            printf("%d ", number); 
+
+Telegram: @PLACEMENTLELO  
+            ++number; 
+        } 
+ 
+        printf("\n"); 
+    } 
+ 
+    return 0; 
+} 
+ 
+ 
+ 
+ 
+ 
+    * 
+   *** 
+  ***** 
+ ******* 
+********* 
+#include <stdio.h> 
+  main() 
+{ 
+   int row, c, n, temp; 
+  
+   printf("Enter the number of rows in pyramid of stars you 
+wish to see "); 
+   scanf("%d",&n); 
+
+Telegram: @PLACEMENTLELO  
+  
+   temp = n; 
+  
+   for ( row = 1 ; row <= n ; row++ ) 
+   { 
+      for ( c = 1 ; c < temp ; c++ ) 
+         printf(" "); // space 
+  
+      temp--; 
+  
+      for ( c = 1 ; c <= 2*row - 1 ; c++ ) 
+         printf("*"); 
+  
+      printf("\n"); 
+   } 
+  
+  } 
+ 
+* 
+** 
+*** 
+**** 
+***** 
+#include <stdio.h> 
+  
+int main() 
+
+Telegram: @PLACEMENTLELO  
+{ 
+    int n, c, k; 
+  
+    printf("Enter number of rows\n"); 
+    scanf("%d",&n); 
+  
+    for ( c = 1 ; c <= n ; c++ ) 
+    { 
+        for( k = 1 ; k <= c ; k++ ) 
+            printf("*"); 
+  
+        printf("\n"); 
+    } 
+  
+    return 0; 
+} 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+   * 
+  *A* 
+ *A*A* 
+
+Telegram: @PLACEMENTLELO  
+*A*A*A* 
+#include<stdio.h> 
+ int main() 
+{ 
+  int n, c, k, space, count = 1; 
+   printf("Enter number of rows\n"); 
+  scanf("%d", &n); 
+   space = n; 
+   for (c = 1; c <= n; c++) 
+  { 
+    for (k = 1; k < space; k++) 
+      printf(" "); 
+     for (k = 1; k <= c; k++) 
+    { 
+      printf("*"); 
+       if (c > 1 && count < c) 
+      { 
+        printf("A"); 
+        count++; 
+      } 
+    }  printf("\n"); 
+    space--; 
+    count = 1; 
+  } 
+  return 0; 
+} 
+
+Telegram: @PLACEMENTLELO  
+ 
+ 
+        1 
+       232 
+      34543 
+     4567654 
+    567898765 
+#include<stdio.h> 
+ main() 
+{ 
+      int n, c, d, num = 1, space; 
+  
+      scanf("%d",&n); 
+  
+      space = n - 1; 
+  
+      for ( d = 1 ; d <= n ; d++ ) 
+      { 
+          num = d; 
+  
+          for ( c = 1 ; c <= space ; c++ ) 
+              printf(" "); 
+  
+          space--; 
+  
+          for ( c = 1 ; c <= d ; c++ ) 
+
+Telegram: @PLACEMENTLELO  
+          { 
+              printf("%d", num); 
+              num++; 
+          } 
+          num--; 
+          num--; 
+          for ( c = 1 ; c < d ; c++) 
+          { 
+              printf("%d", num); 
+              num--; 
+          } 
+          printf("\n"); 
+      } 
+  
+      return 0; 
+} 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+Telegram: @PLACEMENTLELO  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  * 
+ *** 
+***** 
+ *** 
+  * 
+#include <stdio.h> 
+  
+int main() 
+{ 
+  int n, c, k, space = 1; 
+  
+  printf("Enter number of rows\n"); 
+  scanf("%d", &n); 
+  
+  space = n - 1; 
+  
+
+Telegram: @PLACEMENTLELO  
+  for (k = 1; k <= n; k++) 
+  { 
+    for (c = 1; c <= space; c++) 
+      printf(" "); 
+  
+    space--; 
+  
+    for (c = 1; c <= 2*k-1; c++) 
+      printf("*"); 
+  
+    printf("\n"); 
+  } 
+  
+  space = 1; 
+  
+  for (k = 1; k <= n - 1; k++) 
+  { 
+    for (c = 1; c <= space; c++) 
+      printf(" "); 
+  
+    space++; 
+  
+    for (c = 1 ; c <= 2*(n-k)-1; c++) 
+      printf("*"); 
+  
+    printf("\n"); 
+  } 
+
+Telegram: @PLACEMENTLELO  
+  
+  return 0; 
+} 
+ 
+ 
+ 
+ 
+ 
+11.To find GCD of two numbers  
+#include <stdio.h> 
+int main(int argc,char *argv[]) {  
+int a,b,small,i; a=atoi(argv[1]); b=atoi(argv[2]); if(a>b) small=b;  
+else 
+small=a; for(i=small;i>=1;i--) {  
+if((a%i)==0&&(b%i)==0) {  
+printf("%d",i);  
+break; }  
+} return 0;  
+}  
+12. To find the lcm of two numbers  
+#include <stdio.h> 
+int main(int argc,char *argv[]) {  
+int a,b,large; a=atoi(argv[1]); b=atoi(argv[2]); if(a>b)  
+large=a; else large=b;  
+
+Telegram: @PLACEMENTLELO  
+while(1) {  
+if((large%a)==0&&(large%b)==0) {  
+printf("%d",large);  
+break; }  
+large++; }  
+return 0; }  
+13. To find the Factorial of a non negative number  
+#include <stdio.h> 
+int main(int argc,char *argv[])  
+{ 
+int n,fact=1,i; n=atoi(argv[1]); for(i=1;i<=n;i++) {  
+fact=fact*i; }  
+printf("%d",fact); return 0;  
+}  
+14. To find the area of a circle (area=3.14*r*r), when  
+diameter is given.  
+#include <stdio.h> 
+#define PI 3.14 
+int main(int argc,char *argv[]) {  
+float dia,radius,area=0; dia=atoi(argv[1]); radius=0.5*dia; area=PI*radius*radius; 
+printf("%.2f",area);  
+return 0; }  
+15.To check whether the given year is Leap year or not.  
+#include <stdio.h>  
+
+Telegram: @PLACEMENTLELO  
+int main(int argc,char *argv[]) {  
+int year; year=atoi(argv[1]); if(year%100==0) 
+{  
+if(year%400==0) printf("Leap year"); else 
+printf("not leap year");  
+} else  
+if(year%4==0) printf("leap year"); else 
+printf("not leap year");  
+return 0; }  
+16.To find the area of triangle when base and height is  
+given.  
+#include <stdio.h> 
+int main(int argc,char *argv[]) {  
+float height,base,area; height=atoi(argv[1]); base=atoi(argv[2]); area=0.5*base*height; 
+printf("%.2f",area); return 0;  
+}  
+17. To print the Fibonacci series.  
+Input=6 Output=1 1 2 3 5 8  
+#include <stdio.h> 
+int main(int argc,char *argv[]) {  
+int n,first=1,sec=1,next,i;  
+n=atoi(argv[1]); for (i=0;i<n;i++)  
+{ 
+if (i<=1)  
+next=1; else  
+
+Telegram: @PLACEMENTLELO  
+{ 
+next=first+sec; first=sec; sec=next;  
+}  
+printf("%d ",next); }  
+return 0; }  
+18.To check whether the given number is prime or not.  
+#include <stdio.h> 
+int main(int argc,char *argv[]) {  
+int n,i,count=0; n=atoi(argv[1]); for(i=1;i<=n;i++) {  
+if(n%i==0) {  
+count++; }  
+} 
+if(count==2) 
+printf("prime number"); 
+else 
+printf("not prime number "); return 0;  
+}  
+19.To check whether given number is strong number or  
+not.  
+#include<stdio.h> 
+int fact(int); 
+int main(int argc, char *argv[]) {  
+int num,d,n,res=0,i,count=0,x; n=atoi(argv[1]); 
+num=n; 
+x=num;  
+while(n!=0) {  
+n=n/10;  
+
+Telegram: @PLACEMENTLELO  
+count++; }  
+for(i=0;i<count;i++){ if(x>0) 
+{  
+d=x%10; res=res+fact(d); x=x/10;  
+} 
+} if(res==num)  
+{ 
+printf("strong number");  
+} 
+else printf("not strong number");  
+return 0; }  
+int fact(int x) {  
+if(x==0) return 1;  
+else 
+return x*fact(x-1);  
+}  
+20. To check whether number is palindrome or not.  
+#include <stdio.h> 
+int main(int argc,char *argv[]) {  
+int num,rev=0,digit,orig; num=atoi(argv[1]); orig=num;  
+while(num>0){ digit=num%10; rev=rev*10+digit; num=num/10;  
+}  
+if(orig==rev) {  
+printf("palindrome"); }  
+else 
+printf("not palindrome"); return 0;  
+
+Telegram: @PLACEMENTLELO  
+}  
+ 
+ 
+Some Prac ce Ques ons for TCS NQT 
+
+Question #1: Sweet Seventeen 
+Given a maximum of four digits to the base 17(10 -> A, 11 -> B, 12 -> C, 16 -> G) as 
+input, output its decimal value. 
+Input: 
+23GF 
+Solution and output: 
+C++ : 
+#include <iostream> 
+#include <math.h> 
+#include <string.h> 
+using namespace std; 
+int main(){ 
+  char hex[17]; 
+  long long decimal; 
+  int i = 0, val, len; 
+  decimal = 0; 
+  cin>> hex; 
+  len = strlen(hex); 
+  len--; 
+ 
+Java : 
+import java.util.*; 
+class Main 
+{ 
+ 
+public static void main(String[] args) { 
+ 
+ 
+HashMap<Character,Integer> hmap = new HashMap<Character,Integer>(); 
+ 
+ 
+hmap.put('A',10); 
+ 
+ 
+hmap.put('B',11); 
+ 
+ 
+hmap.put('C',12); 
+ 
+ 
+hmap.put('D',13); 
+ 
+ 
+hmap.put('E',14); 
+ 
+ 
+hmap.put('F',15); 
+ 
+ 
+hmap.put('G',16); 
+ 
+ 
+hmap.put('a',10); 
+ 
+ 
+hmap.put('b',11); 
+ 
+ 
+hmap.put('c',12); 
+ 
+ 
+hmap.put('d',13); 
+ 
+ 
+hmap.put('e',14); 
+ 
+ 
+hmap.put('f',15); 
+
+ 
+ 
+hmap.put('g',16); 
+ 
+ 
+Scanner sin = new Scanner(System.in); 
+ 
+ 
+ 
+                String s = sin.nextLine(); 
+ 
+ 
+long  num=0; 
+ 
+ 
+int k=0; 
+ 
+ 
+ 
+                for(int i=s.length()-1;i>=0;i--) 
+ 
+ 
+{ 
+ 
+ 
+    if((s.charAt(i)>='A'&&s.charAt(i)<='Z')||(s.charAt(i)>='a' &&s.charAt(i)<='z')) 
+ 
+ 
+       { 
+ 
+ 
+           num = num + hmap.get(s.charAt(i))*(int)Math.pow(17,k++); 
+ 
+ 
+       } 
+ 
+ 
+    else 
+ 
+ 
+       { 
+ 
+ 
+        num = num+((s.charAt(i)-'0')*(int)Math.pow(17,k++)); 
+ 
+ 
+} 
+ 
+ 
+} 
+ 
+ 
+System.out.println(num); 
+ 
+} 
+} 
+ 
+ 
+Python : 
+num = str(input()) 
+print(int(num,17)) 
+ 
+ 
+OUTPUT  
+10980 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+Question #2: A Sober Walk 
+Our hoary culture had several great persons since time immemorial and king 
+Vikramaditya’s nava ratnas (nine gems) belongs to this ilk. They are named in the 
+following shloka: 
+Among these, Varahamihira was an astrologer of eminence and his book Brihat 
+Jataak is recokened as the ultimate authority in astrology. He was once talking 
+with Amarasimha, another gem among the nava ratnas and the author of the 
+Sanskrit thesaurus, Amarakosha. Amarasimha wanted to know the final position 
+of a person, who starts from the origin 0 0 and travels per the following scheme. 
+• He first turns and travels 10 units of distance 
+• His second turn is upward for 20 units 
+• The third turn is to the left for 30 units 
+• The fourth turn is downward for 40 units 
+• The fifth turn is to the right(again) for 50 units 
+… And thus he travels, every time increasing the travel distance by 10 units. 
+Constraints: 
+2<=n<=1000 
+Input: 
+3 
+Solution and output: 
+C++ : 
+#include<iostream> 
+#include<stdlib.h> 
+using namespace std; 
+int main() 
+{ 
+    int n; 
+    cin>>n; 
+    char c = 'R'; 
+    int x = 0, y = 0; 
+    while(n){ 
+        switch(c){ 
+            case 'R': 
+                x = abs(x) + 10; 
+
+                y = abs(y); 
+                c ='U'; 
+                break; 
+            case 'U': 
+                y = y + 20; 
+                c = 'L'; 
+                break; 
+            case 'L': 
+                x = -(x + 10); 
+                c = 'D'; 
+                break; 
+            case 'D': 
+                y = -(y); 
+                c = 'R'; 
+                break; 
+            } 
+        n--; 
+    } 
+    cout<< x<< " " << y; 
+} 
+ 
+Java :  
+import java.util.*; 
+import java.lang.*; 
+ 
+class Main { 
+ 
+public static void main (String[] args) { 
+ 
+    Scanner sc = new Scanner(System.in); 
+ 
+    int n=sc.nextInt(); 
+ 
+    char c = 'R'; 
+        int x = 0, y = 0; 
+        while(n>0){ 
+        switch(c){ 
+            case 'R': 
+                x = Math.abs(x) + 10; 
+                y = Math.abs(y); 
+                c ='U'; 
+                break; 
+            case 'U': 
+                y = y + 20; 
+                c = 'L'; 
+                break; 
+            case 'L': 
+                x = -(x + 10); 
+                c = 'D'; 
+
+                break; 
+            case 'D': 
+                y = -(y); 
+                c = 'R'; 
+                break; 
+            } 
+        n--; 
+    } 
+ 
+ 
+System.out.println(x+" "+y); 
+ 
+} 
+} 
+ 
+Python : 
+n = int(input()) 
+c = 'R' 
+x,y=0,0 
+for i in range(n): 
+    if c=='R': 
+        x = abs(x) + 10; 
+        y = abs(y); 
+        c ='U'; 
+    elif c=='U': 
+        y = y + 20; 
+        c = 'L'; 
+    elif c=='L': 
+        x = -(x + 10); 
+        c = 'D'; 
+    elif c=='D': 
+        y = -(y); 
+        c = 'R'; 
+print(x,y) 
+ 
+OUTPUT 
+-20 20 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+Question #3: Word is the key 
+One programming language has the following keywords that cannot be used as 
+identifiers: 
+break, case, continue, default, defer, else, for, func, goto, if, map, range, return, 
+struct, type, var 
+Write a program to find if the given word is a keyword or not 
+Input #1: 
+defer 
+Output: 
+defer is a keyword 
+Input #2: 
+While 
+Solution and output: 
+C++ : 
+#include<iostream> 
+#include<string.h> 
+using namespace std; 
+int main(){ 
+    char str[16][10] = {"break", "case", "continue", "default", "defer", "else","for",  
+    "func", "goto", "if", "map", "range", "return", "struct", "type", "var"};     
+    char input[20];     
+    int flag = 0; 
+    cin >> input;    
+    for(int i = 0; i<16;i++){ 
+        if(strcmp(input,str[i]) == 0){ 
+            flag = 1; 
+            break; 
+        } 
+    }   
+    if(flag==1){ 
+        cout << input << " is a keyword"; 
+    } 
+    else{ 
+        cout << input << " is not a keyword"; 
+
+    } 
+    return 0; 
+} 
+ 
+Java :  
+import java.util.Scanner; 
+class Main 
+{ 
+    public static void main(String args[]) 
+    { 
+ 
+     String str[]= {"break", "case", "continue", "default", "defer", "else","for", "func", "goto",  
+     "if", "map", "range", "return", "struct", "type", "var"}; 
+ 
+    int flag = 0; 
+    Scanner sc = new Scanner(System.in); 
+    String input=sc.nextLine(); 
+ 
+    for(int i = 0; i<16;i++){ 
+ 
+        if(str[i].equals(input)){ 
+            flag = 1; 
+            break; 
+        } 
+    } 
+ 
+    if(flag==1){ 
+        System.out.println(input+" is a keyword"); 
+    } 
+    else{ 
+        System.out.println(input+" is not a keyword"); 
+    } 
+ 
+} 
+} 
+ 
+Python 
+keyword = {"break", "case", "continue", "default", "defer", "else", "for",  
+"func", "goto", "if", "map", "range", "return", "struct", "type", "var"} 
+ 
+input_var = input() 
+if input_var in keyword: 
+    print(input_var+ " is a keyword") 
+else: 
+
+    print(input_var+ " is not a keyword") 
+ 
+ 
+OUTPUT 
+while is not a keyword 
+ 
+ 
+ 
+ 
+ 
+Question #4: 
+Problem Statement – 
+A chocolate factory is packing chocolates into the packets. The chocolate packets here represent 
+an array  of N number of integer values. The task is to find the empty packets(0) of chocolate and 
+push it to the end of the conveyor belt(array). 
+Example 1 : 
+N=8 and arr = [4,5,0,1,9,0,5,0]. 
+There are 3 empty packets in the given set. These 3 empty packets represented as O should be 
+pushed towards the end of the array 
+Input : 
+8  – Value of N 
+[4,5,0,1,9,0,5,0] – Element of arr[O] to arr[N-1],While input each element is separated by newline 
+Output: 
+4 5 1 9 5 0 0 0 
+Example 2: 
+Input: 
+6 — Value of N. 
+
+[6,0,1,8,0,2] – Element of arr[0] to arr[N-1], While input each element is separated by newline 
+Output: 
+6 1 8 2 0 0 
+C++ : 
+#include <bits/stdc++.h> 
+using namespace std; 
+int main () 
+{ 
+  int n, j = 0; 
+  cin >> n; 
+  int a[n] = { 0 }; 
+  for (int i = 0; i < n; i++) 
+  { 
+    cin >> a[j]; 
+    if (a[j] != 0) 
+    { 
+        j++; 
+    } 
+  } 
+  for (int i = 0; i < n; i++) 
+  { 
+      cout << a[i] << " "; 
+  } 
+ 
+ 
+Java :  
+import java.util.*; 
+class Main 
+{ 
+    public static void main(String[] args) 
+    { 
+            Scanner sc=new Scanner(System.in); 
+            int n=sc.nextInt(); 
+            int arr[]=new int[n]; 
+            for(int i=0;i< n;i++) 
+                  arr[i]=sc.nextInt(); 
+            int count=0; 
+            for(int i=0;i< n;i++) 
+                if(arr[i]!=0) 
+                    arr[count++]=arr[i]; 
+             for(int i=count;i < n;i++) 
+                 arr[i]=0; 
+
+             for(int i=0;i< n;i++) 
+                    System.out.print(arr[i]+" "); 
+    } 
+} 
+ 
+ 
+Python 
+n=int(input()) 
+j=0 
+L=[0 for i in range(n)] 
+for i in range(n): 
+    a=int(input()) 
+    if a!=0: 
+        L[j]=a 
+        j+=1 
+for i in L: 
+    print(i,end=" ") 
+ 
+ 
+OUTPUT 
+4 5 1 9 5 0 0 0 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+Question #5: 
+Problem Statement – 
+Joseph is learning digital logic subject which will be for his next semester. He usually tries to solve 
+unit assignment problems before the lecture. Today he got one tricky question. The problem 
+statement is “A positive integer has been given as an input. Convert decimal value to binary 
+representation. Toggle all bits of it after the most significant bit including the most significant bit. 
+Print the positive integer value after toggling all bits”. 
+Constrains- 
+1<=N<=100 
+Example 1: 
+Input : 
+10  -> Integer 
+Output : 
+5    -> result- Integer 
+Explanation: 
+Binary representation of 10 is 1010. After toggling the bits(1010), will get 0101 which represents 
+“5”. Hence output will print “5”. 
+ 
+C++ : 
+#include<bits/stdc++.h> 
+using namespace std; 
+int main () 
+{ 
+  int n; 
+  cin >> n; 
+  int k = (1 << (int) floor (log2 (n)) + 1) - 1; 
+  cout << (n ^ k); 
+} 
+ 
+Java :  
+
+import java.util.*; 
+class Main 
+{ 
+  public static void main(String[] args) 
+  { 
+         Scanner sc=new Scanner(System.in); 
+         int no=sc.nextInt(); 
+          String bin=""; 
+          
+          while(no!=0) 
+           { 
+                  bin=(no&1)+bin; 
+                  no=no>>1; 
+           } 
+            bin=bin.replaceAll("1","2"); 
+            bin=bin.replaceAll("0","1"); 
+            bin=bin.replaceAll("2","0"); 
+            int res=Integer.parseInt(bin,2); 
+           System.out.println(res); 
+   } 
+} 
+ 
+ 
+Python :   
+import math 
+n=int(input()) 
+k=(1<< int(math.log2(n))+1)-1 
+print(n^k) 
+ 
+ 
+OUTPUT 
+5    -> result- Integer 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+Question #6: 
+Jack is always excited about sunday. It is favourite day, when he gets to play all day. And goes to 
+cycling with his friends.  
+So every time when the months starts he counts the number of sundays he will get to enjoy. 
+Considering the month can start with any day, be it Sunday, Monday…. Or so on. 
+Count the number of Sunday jack will get within n number of days. 
+ Example 1: 
+Input  
+mon-> input String denoting the start of the month. 
+13  -> input integer denoting the number of days from the start of the month. 
+Output : 
+2    -> number of days within 13 days. 
+Explanation: 
+The month start with mon(Monday). So the upcoming sunday will arrive in next 6 days. And then 
+next Sunday in next 7 days and so on. 
+Now total number of days are 13. It means 6 days to first sunday and then remaining 7 days will 
+end up in another sunday. Total 2 sundays may fall within 13 days. 
+ 
+C++ : 
+#include <bits/stdc++.h> 
+using namespace std; 
+int main() 
+{ 
+    string s; cin>>s; 
+    int a,ans=0; 
+    cin>>a; 
+    unordered_map< string,int > m; 
+    m["mon"]=6;m["tue"]=5;m["wed"]=4; 
+    m["thu"]=3;m["fri"]=2;m["sat"]=1; 
+
+    m["sun"]=0; 
+    if(a-m[s.substr(0,3)] >=1) ans=1+(a-m[s.substr(0,3)])/7; 
+    cout<< ans; 
+} 
+ 
+ 
+Java :  
+import java.util.*; 
+class Main 
+{ 
+public static void main(String[] args) 
+{ 
+        Scanner sc=new Scanner(System.in); 
+        String str=sc.next(); 
+        int n=sc.nextInt(); 
+        String arr[]={"mon","tue,","wed","thu","fri","sat","sun"}; 
+        int i=0; 
+        for(i=0;i< arr.length;i++) if(arr[i].equals(str)) break; int res=1; int rem=6-i; n=n-rem; if(n >0) 
+           res+=n/7; 
+        System.out.println(res); 
+       
+} 
+} 
+ 
+ 
+Python :   
+def main(): 
+    s = input() 
+    a = int(input()) 
+    m = { 
+        "mon": 6, "tue": 5, "wed": 4, 
+        "thu": 3, "fri": 2, "sat": 1, 
+        "sun": 0 
+    } 
+    ans = 0 
+    if a - m[s[:3]] >= 1: 
+        ans = 1 + (a - m[s[:3]]) // 7 
+    print(ans) 
+if __name__ == "__main__": 
+    main() 
+ 
+ 
+
+OUTPUT 
+5    -> result- Integer 
+ 
+ 
+ 
+ 
+Question #7: 
+Jack is always excited about sunday. It is favourite day, when he gets to play all day. And goes to 
+cycling with his friends.  
+So every time when the months starts he counts the number of sundays he will get to enjoy. 
+Considering the month can start with any day, be it Sunday, Monday…. Or so on. 
+Count the number of Sunday jack will get within n number of days. 
+ Example 1: 
+Input  
+mon-> input String denoting the start of the month. 
+13  -> input integer denoting the number of days from the start of the month. 
+Output : 
+2    -> number of days within 13 days. 
+Explanation: 
+The month start with mon(Monday). So the upcoming sunday will arrive in next 6 days. And then 
+next Sunday in next 7 days and so on. 
+Now total number of days are 13. It means 6 days to first sunday and then remaining 7 days will 
+end up in another sunday. Total 2 sundays may fall within 13 days. 
+ 
+C++ : 
+#include <bits/stdc++.h> 
+using namespace std; 
+
+int main() 
+{ 
+    string s; cin>>s; 
+    int a,ans=0; 
+    cin>>a; 
+    unordered_map< string,int > m; 
+    m["mon"]=6;m["tue"]=5;m["wed"]=4; 
+    m["thu"]=3;m["fri"]=2;m["sat"]=1; 
+    m["sun"]=0; 
+    if(a-m[s.substr(0,3)] >=1) ans=1+(a-m[s.substr(0,3)])/7; 
+    cout<< ans; 
+} 
+ 
+Java :  
+import java.util.*; 
+class Main 
+{ 
+public static void main(String[] args) 
+{ 
+        Scanner sc=new Scanner(System.in); 
+        String str=sc.next(); 
+        int n=sc.nextInt(); 
+        String arr[]={"mon","tue,","wed","thu","fri","sat","sun"}; 
+        int i=0; 
+        for(i=0;i< arr.length;i++) if(arr[i].equals(str)) break; int res=1; int rem=6-i; n=n-rem; if(n >0) 
+           res+=n/7; 
+        System.out.println(res); 
+       
+} 
+} 
+ 
+ 
+Python :   
+def main(): 
+    s = input() 
+    a = int(input()) 
+    m = { 
+        "mon": 6, "tue": 5, "wed": 4, 
+        "thu": 3, "fri": 2, "sat": 1, 
+        "sun": 0 
+    } 
+    ans = 0 
+    if a - m[s[:3]] >= 1: 
+        ans = 1 + (a - m[s[:3]]) // 7 
+
+    print(ans) 
+ 
+if __name__ == "__main__": 
+    main() 
+ 
+ 
+OUTPUT 
+2    -> number of days within 13 days. 
+ 
+ 
+ 
+ 
+ 
+Question #8: 
+Airport security officials have confiscated several item of the passengers at the security check 
+point. All the items have been dumped into a huge box (array). Each item possesses a certain 
+amount of risk[0,1,2]. Here, the risk severity of the items represent an array[] of N number of 
+integer values. The task here is to sort the items based on their levels of risk in the array. The risk 
+values range from 0 to 2. 
+Example : 
+Input : 
+7  -> Value of N 
+[1,0,2,0,1,0,2]-> Element of arr[0] to arr[N-1], while input each element is separated by new line. 
+Output : 
+0 0 0 1 1 2 2  -> Element after sorting based on risk severity  
+Example 2: 
+input : 10  -> Value of N  
+[2,1,0,2,1,0,0,1,2,0] -> Element of arr[0] to arr[N-1], while input each element is separated by a new 
+line. 
+
+Output :  
+0 0 0 0 1 1 1 2 2 2  ->Elements after sorting based on risk severity. 
+Explanation: 
+In the above example, the input is an array of size N consisting of only 0’s, 1’s and 2s. The output 
+is a sorted array from 0 to 2 based on risk severity. 
+ 
+C++ : 
+#include <bits/stdc++.h> 
+using namespace std; 
+int main() 
+{ 
+    int n; cin>>n; 
+    int a[n]; 
+    for(int i=0;i< n;i++) cin>>a[i]; 
+    int l=0,m=0,h=n-1; 
+    while(m<=h) 
+    { 
+        if(a[m]==0) swap(a[l++],a[m++]); 
+        else if(a[m]==1) m++; 
+        else swap(a[m],a[h--]); 
+    } 
+    for(int i=0;i< n;i++) cout<< a[i]<<" "; 
+} 
+ 
+Java :  
+import java.util.*; 
+class Main 
+{ 
+    public static void main(String[] args) 
+    { 
+         Scanner sc=new Scanner(System.in); 
+          int n=sc.nextInt(); 
+          int arr[]=new int[n]; 
+          for(int i=0;i< n;i++) 
+                 arr[i]=sc.nextInt(); 
+           int countZero=0,countOne=0,countTwo=0; 
+           for(int i=0;i< n;i++) { if(arr[i]==0) countZero++; else if(arr[i]==1) countOne++; else if(arr[i]==2) 
+countTwo++; } int j =0; while(countZero >0) 
+             { 
+
+                        arr[j++]=0; 
+                        countZero--; 
+             } 
+             while(countOne >0) 
+             { 
+                       arr[j++]=1; 
+                      countOne--; 
+              } 
+ 
+              while(countTwo >0) 
+              { 
+                      arr[j++]=2; 
+                      countTwo--; 
+               } 
+ 
+              for(int i=0;i < n;i++) 
+                    System.out.print(arr[i]+" ");         
+    } 
+} 
+ 
+ 
+Python :   
+n = int(input()) 
+arr = [] 
+for i in range(n): 
+    arr.append(int(input())) 
+for i in sorted(arr): 
+    print(i, end=" ") 
+ 
+ 
+OUTPUT 
+0 0 0 0 1 1 1 2 2 2  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+Question #9: 
+Given an integer array Arr of size N the task is to find the count of elements whose value is greater 
+than all of its prior elements. 
+Note : 1st element of the array should be considered in the count of the result. 
+For example, 
+Arr[]={7,4,8,2,9} 
+As 7 is the first element, it will consider in the result. 
+8 and 9 are also the elements that are greater than all of its previous elements. 
+Since total of  3 elements is present in the array that meets the condition. 
+Hence the output = 3. 
+ Example 1: 
+Input  
+5 -> Value of N, represents size of Arr 
+7-> Value of Arr[0] 
+4 -> Value of Arr[1] 
+8-> Value of Arr[2] 
+2-> Value of Arr[3] 
+9-> Value of Arr[4] 
+Output : 
+3 
+Example 2: 
+5   -> Value of N, represents size of Arr 
+3  -> Value of Arr[0] 
+4 -> Value of Arr[1] 
+5 -> Value of Arr[2] 
+8 -> Value of Arr[3] 
+9 -> Value of Arr[4] 
+
+Output :  
+5 
+Constraints 
+1<=N<=20 
+1<=Arr[i]<=10000 
+ 
+C++ : 
+#include <bits/stdc++.h> 
+using namespace std; 
+int main() 
+{ 
+    int n,c=0,a,m=INT_MIN; 
+    cin>>n; 
+    while(n--) 
+    { 
+        cin>>a; 
+        if(a>m) 
+        { 
+            m=a; 
+            c++; 
+        } 
+    } 
+    cout << c; 
+} 
+ 
+Java :  
+import java.util.*; 
+class Main 
+{ 
+  public static void main(String[] args) 
+  { 
+         Scanner sc=new Scanner(System.in); 
+         int n=sc.nextInt(); 
+         int arr[]=new int[n]; 
+         for(int i=0;i< n;i++) 
+                 arr[i]=sc.nextInt(); 
+         int max=Integer.MIN_VALUE; 
+ 
+         int count=0; 
+         for(int i=0;i< n;i++) { if(arr[i]>max) 
+
+ 
+              { 
+                       max=arr[i]; 
+                       count++; 
+               } 
+         }       
+         System.out.println(count); 
+} 
+} 
+ 
+ 
+Python :   
+import sys 
+n=int(input()) 
+c=0 
+m=-sys.maxsize-1 
+while n: 
+    n-=1 
+    a=int(input()) 
+    if a>m: 
+        m=a 
+        c+=1 
+print(c) 
+ 
+ 
+ 
+OUTPUT 
+5 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+Question #10: 
+A supermarket maintains a pricing format for all its products. A value N is printed on each 
+product. When the scanner reads the value N on the item, the product of all the digits in the value 
+N is the price of the item. The task here is to design the software such that given the code of any 
+item N the product (multiplication) of all the digits of value should be computed(price). 
+Example 1: 
+Input : 
+5244 -> Value of N 
+Output : 
+160 -> Price  
+Explanation: 
+From the input above  
+Product of the digits 5,2,4,4 
+5*2*4*4= 160 
+Hence, output is 160. 
+ 
+C++ : 
+#include <bits/stdc++.h> 
+using namespace std; 
+int main() 
+{ 
+    string s;  
+    cin>>s; 
+    int p=1; 
+    for(auto i:s)  
+        p*=(i-'0'); 
+    cout<< p; 
+} 
+ 
+Java :  
+import java.util.*; 
+class Main 
+{ 
+
+    public static void main(String[] args) 
+    { 
+          Scanner sc=new Scanner(System.in); 
+          int n=sc.nextInt(); 
+          int res=1; 
+          while(n>0) 
+          { 
+                res=res*(n%10); 
+                n=n/10; 
+           } 
+            System.out.println(res); 
+    } 
+} 
+ 
+ 
+Python :   
+n=input() 
+p=1 
+for i in n: 
+    p*=int(i) 
+print(p) 
+ 
+ 
+OUTPUT 
+160 -> Price  
+
