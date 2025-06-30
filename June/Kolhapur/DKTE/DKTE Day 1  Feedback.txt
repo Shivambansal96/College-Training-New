@@ -1,0 +1,51 @@
+  ETC - B
+
+
+7) 22UET110 - Good skills but Sounded nervous, Voice is not audible, Must work on communication or skills wont matter.
+8) 22UET026 - Sounded nervous, need to work on communication, explanation and lacks confidence.
+9) 22UET073 - Sounded nervous, need to work on communication, explanation and lacks confidence.
+10) 22UET093 - Confident, Body posture good, must improve on impromptu question and negotiation skills.
+11) 22UET305 - Communication is okay but explanation can be improved, fumbles and nervous.
+12) 22UET066 - Needs to work on Communication, MUST change Resume looks and format.
+13) 22UET004 - Nervous, gets pressurized, need to improve on communication, Good eye contact.
+14) 22UET086 - Confident, Good eye contact, Has clarity in role and everything, fumbles sometimes in impromptu questions.
+15) 22UET055 - Confident, Good body language, Has clarity in role and everything, Good explanation, fumbles a bit.
+
+
+ETC - A
+
+1) 22UET098 - Communication, Eye contact Body posture all good, fumbles a bit in case on im-prompt questions.
+2) 22UET111  - Communication, Eye contact, Body posture all good but in case of location should be ready to locate to any location
+3) 22UET120 - Introduction can be improved, marks not required to be discloses unless somethings very good, rest all good.
+4) 22UET033 - Eye contact good, should work on communication, should work on impromptu questions.
+5) 22UET082  - Should work on manners, Communication can be improved, rest all good.
+6) 22UET077 - Communication, Eye contact, Body posture all good, should be able to explain the projects a better.
+
+AIML - B
+
+1) 22UAI106 - Nervous, Not properly prepared, 
+2) 22UAI129 - Confident, Good explanation, Avoid voice fillers.
+3) 22UAI101 - Introduction needs improvement, Under-Confident.
+4) 22UAI317 - Needs to improve introduction, Nervous and fumbling a lot.
+5) 22UAI084 - Good Introduction, lacks knowledge, Needs to work on communication and body language.
+6) 22UAI110 - Needs overall improvement in every segment, CHANGE Resume.
+7) 22UAI309 - Fumbling, not Attentive, language issue but has knowledge.
+8) 22UAI104 - Good introduction, Confident, must make eye contact, can improve explanation
+9) 22UAI304 - Confident,  Good introduction, must make eye contact, work on negotiation skills. 
+10) 22UAI102 - Must work on Communication, Explanation and body language is good
+11) 22UAI090 - Can work on Communication and Explanation, must correct Body language 
+12) 22UAI115 - Must correct Body language, Nervous, Fumbling issue
+13) 22UAI312 - Good Explanation and Body language, Fumbling issue
+
+CSE - A
+
+
+14) 22UCS062 - Good Explanation and Body language, Fumbling issue and avoid voice filler
+15) 22UCS067- Needs improvement on project explanation, Fumbling issue
+16) 22UCS014 - Good Communication, Explanation and Body Language, Fumbling
+17) 22UCS028 - Confident, Good Communication, Fumbling and needs improvement on impromptu questions
+18) 22UCS027 - Good Communication, Explanation and Body Language, Has clarity, Must work on negotiation skills
+19) 22UCS041 - Confident and Good body language, Fumbling issue and avoid voice fillers
+20) 22UCS003 - Good Communication, Explanation and Body Language, MUST be attentive and listening.
+
+
