@@ -1,0 +1,92 @@
+{
+  "questions": [
+    {
+      "question": "What is the time complexity of adding an element to the end of a Python list?",
+      "options": [
+        "O(1)",
+        "O(n)",
+        "O(log n)",
+        "O(n²)"
+      ],
+      "answer": 0,
+      "explanation": "Appending is usually constant time."
+    },
+    {
+      "question": "What is the time complexity of searching for an element in an unsorted list?",
+      "options": [
+        "O(1)",
+        "O(n)",
+        "O(log n)",
+        "O(n²)"
+      ],
+      "answer": 1,
+      "explanation": "You may have to check every element."
+    },
+    {
+      "question": "What is the time complexity of iterating through every element in a list of size n?",
+      "options": [
+        "O(1)",
+        "O(n)",
+        "O(log n)",
+        "O(n²)"
+      ],
+      "answer": 1,
+      "explanation": "You visit each element once."
+    },
+    {
+      "question": "What is the time complexity of accessing the first element in a list?",
+      "options": [
+        "O(1)",
+        "O(n)",
+        "O(log n)",
+        "O(n²)"
+      ],
+      "answer": 0,
+      "explanation": "Direct access by index is constant time."
+    },
+    {
+      "question": "What is the time complexity of inserting an element at the beginning of a list?",
+      "options": [
+        "O(1)",
+        "O(n)",
+        "O(log n)",
+        "O(n²)"
+      ],
+      "answer": 1,
+      "explanation": "Elements need to be shifted to make space."
+    },
+    {
+      "question": "What is the time complexity of the following code snippet?\n\nfor i in range(n):\n    for j in range(n):\n        print(i, j)",
+      "options": [
+        "O(n)",
+        "O(n²)",
+        "O(log n)",
+        "O(1)"
+      ],
+      "answer": 1,
+      "explanation": "Two nested loops each run n times, so total operations = n × n = n²."
+    },
+    {
+      "question": "You have a list of size n. What is the time complexity of checking every possible pair of elements in the list? (For example, to find duplicates by comparing all pairs.)",
+      "options": [
+        "O(n)",
+        "O(n log n)",
+        "O(n²)",
+        "O(1)"
+      ],
+      "answer": 2,
+      "explanation": "Checking every pair means comparing all combinations, which is proportional to n²."
+    },
+    {
+      "question": "You have an array of size n. What is the time complexity to access the element at index k?",
+      "options": [
+        "O(1)",
+        "O(n)",
+        "O(log n)",
+        "O(n²)"
+      ],
+      "answer": 0,
+      "explanation": "Access by index in an array is constant time."
+    }
+  ]
+}

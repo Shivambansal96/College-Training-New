@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Time Complexity Quiz</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🕒</text></svg>">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.31/jspdf.plugin.autotable.min.js"></script>
+</head>
+
+<body>
+
+    <h1 class="main-title"><span class="emoji">🕒</span>Time Complexity Quiz</h1>
+    <audio id="winnerAudio" src="audio/fireCrackers.mp3" preload="auto"></audio>
+    <div class="score-display">
+        <div>
+            <h3>Score</h3>
+            <div class="score">0</div>
+        </div>
+        <button class="theme-toggle" onclick="toggleTheme()" title="Toggle Theme">
+            <span class="icon">🌓</span>
+        </button>
+    </div>
+    <button class="shortcut-fab" onclick="toggleShortcuts()" title="Keyboard Shortcuts">⌨️</button>
+    <div class="keyboard-shortcuts">
+        <h4 onclick="toggleShortcuts()">Keyboard Shortcuts</h4>
+        <div class="shortcut-item">
+            <span>Previous Question</span>
+            <span class="key">←</span>
+        </div>
+        <div class="shortcut-item">
+            <span>Next Question</span>
+            <span class="key">→</span>
+        </div>
+        <div class="shortcut-item">
+            <span>Select Option 1-4</span>
+            <span class="key">1-4</span>
+        </div>
+        <div class="shortcut-item">
+            <span>Finish Contest</span>
+            <span class="key">F</span>
+        </div>
+        <div class="shortcut-item">
+            <span>Toggle Theme</span>
+            <span class="key">T</span>
+        </div>
+    </div>
+    <div class="unanswered-sidebar">
+        <h3>Questions Not Attempted</h3>
+        <div class="unanswered-count">0</div>
+        <div class="unanswered-list">
+            <!-- Unanswered questions will be listed here -->
+        </div>
+    </div>
+    <div class="winner-popup" id="winnerPopup">
+        <div class="winner-content">
+            <h2>🎉 Contest Complete! 🎉</h2>
+            <p>Your Final Score:</p>
+            <div class="score" id="finalScore">0</div>
+            <p>Total Questions: <span id="totalQuestions">0</span></p>
+            <button onclick="resetContest()">Start New Contest</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <div id="question-box">
+            <!-- Question content will be injected here -->
+        </div>
+        <div class="nav-buttons">
+            <button id="prevBtn" onclick="changeQuestion(-1)">Previous</button>
+            <button id="finishBtn" onclick="finishContest()" class="finish-btn">Finish Contest</button>
+            <button id="nextBtn" onclick="changeQuestion(1)">Next</button>
+            <button id="shuffleBtn" onclick="renderQuestion(currentIndex)" style="background-color: #28a745; color: white; font-size: 20px;">Shuffle Options</button>
+        </div>
+    </div>
+
+</body>
+
+</html>
+<script src="script.js"></script>
