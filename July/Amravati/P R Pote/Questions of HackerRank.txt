@@ -1,0 +1,29 @@
+Loops
+Write a function
+Print Function
+Find Runner Up
+Nested Lists
+Finding the percentage
+Lists 
+Tuples 
+sWAP cASE
+String split and join
+Mutations ..
+Find a string
+Text Wrap
+Capitalise! ..
+Introduction to sets
+No Idea!
+Symmetric Difference
+Set .add
+Set.union
+Set .discard, .remove and .pop
+Set .difference
+Set .symmetric_Difference
+Set .intersection
+Check Subset
+Mod Divmod
+Power - mod Power
+Integers come in all sizes
+Python Evaluation
+Validating Phone numbers.

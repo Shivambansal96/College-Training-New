@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>N Queens Backtracking Visualizer</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: #121212;
+    color: #eee;
+    margin: 0;
+    min-height: 100vh;
+    padding: 30px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;
+  }
+
+  #main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    letter-spacing: 1.2px;
+    text-shadow: 0 0 10px #ff4081;
+    text-align: center;
+  }
+
+  #controls {
+    margin-bottom: 25px;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+  }
+
+  label {
+    font-size: 1.25rem;
+    font-weight: 600;
+  }
+
+  select {
+    font-size: 1.25rem;
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background: #222;
+    color: #eee;
+    box-shadow: 0 0 8px #ff4081;
+    transition: background 0.3s;
+  }
+
+  select:hover {
+    background: #333;
+  }
+
+  button {
+    font-size: 1.3rem;
+    padding: 10px 25px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    background: #ff4081;
+    color: #fff;
+    font-weight: 700;
+    box-shadow: 0 0 15px #ff4081;
+    transition: background 0.3s, box-shadow 0.3s;
+  }
+
+  button:disabled {
+    background: #aa3c65;
+    box-shadow: none;
+    cursor: default;
+  }
+
+  button:hover:not(:disabled) {
+    background: #e73370;
+    box-shadow: 0 0 25px #ff70a8;
+  }
+
+  #board {
+    display: grid;
+    margin: 0 auto 30px auto;
+    border: 4px solid #ff4081;
+    border-radius: 12px;
+    box-shadow: 0 0 25px #ff4081aa;
+  }
+
+  .cell {
+    width: 70px;
+    height: 70px;
+    border: 1px solid #444;
+    box-sizing: border-box;
+    font-size: 48px;
+    line-height: 70px;
+    user-select: none;
+    text-align: center;
+    transition: background-color 0.4s;
+  }
+
+  .black {
+    background: #2a2a2a;
+  }
+
+  .white {
+    background: #bfbfbf;
+  }
+
+  .queen {
+    color: #ff4081;
+  }
+
+  .trying {
+    background: #2979ff;
+    color: white;
+  }
+
+  .backtracked {
+    background: #ffc107;
+    color: #333;
+  }
+
+  #legend {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    font-weight: 600;
+    background: #1e1e1e;
+    padding: 20px 25px;
+    border-radius: 14px;
+    box-shadow: 0 0 25px #ff4081aa;
+    min-width: 190px;
+    font-size: 1.1rem;
+    transition: font-size 0.3s ease, gap 0.3s ease;
+  }
+  #legend.large {
+    font-size: 1.3rem;
+    gap: 35px;
+  }
+
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .color-box {
+    width: 28px;
+    height: 28px;
+    border-radius: 6px;
+    border: 1.5px solid #333;
+    box-shadow: 0 0 6px #ff4081aa;
+    flex-shrink: 0;
+  }
+
+  .color-trying {
+    background: #2979ff;
+  }
+
+  .color-queen {
+    background: transparent;
+    font-size: 28px;
+    color: #ff4081;
+    text-align: center;
+    line-height: 28px;
+  }
+
+  .color-backtracked {
+    background: #ffc107;
+  }
+
+  .color-black {
+    background: #2a2a2a;
+  }
+
+  .color-white {
+    background: #bfbfbf;
+  }
+
+  #message {
+    position: absolute;
+    top: 130px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #ff4081;
+    color: white;
+    font-weight: 700;
+    padding: 12px 22px;
+    border-radius: 24px;
+    font-size: 1.25rem;
+    box-shadow: 0 0 20px #ff4081aa;
+    opacity: 0;
+    pointer-events: none;
+    user-select: none;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: opacity 0.4s ease;
+  }
+
+  #message.show {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  #message span {
+    font-size: 1.6rem;
+  }
+</style>
+</head>
+<body>
+
+<div id="main">
+  <h1>N Queens Visualizer</h1>
+
+  <div id="controls">
+    <label for="nSelect">Select N:</label>
+    <select id="nSelect">
+      <option value="4" selected>4 Queens</option>
+      <option value="8">8 Queens</option>
+    </select>
+    <button id="startBtn">Start Solving</button>
+  </div>
+
+  <div id="board"></div>
+</div>
+
+<div id="legend">
+  <div class="legend-item"><div class="color-box color-queen">♕</div>Queen Placed</div>
+  <div class="legend-item"><div class="color-box color-trying"></div>Trying Position</div>
+  <div class="legend-item"><div class="color-box color-backtracked"></div>Backtracked</div>
+  <div class="legend-item"><div class="color-box color-black"></div>Black Cell</div>
+  <div class="legend-item"><div class="color-box color-white"></div>White Cell</div>
+</div>
+
+<div id="message"><span>⬅️</span>This is not possible — Backtracking...</div>
+
+<script>
+  const boardDiv = document.getElementById('board');
+  const startBtn = document.getElementById('startBtn');
+  const nSelect = document.getElementById('nSelect');
+  const message = document.getElementById('message');
+  const legend = document.getElementById('legend');
+  let N = parseInt(nSelect.value);
+  let board = [];
+  let cells = [];
+
+  function createBoard() {
+    boardDiv.innerHTML = '';
+    boardDiv.style.gridTemplateColumns = `repeat(${N}, 70px)`;
+    cells = [];
+    for (let i = 0; i < N; i++) {
+      cells[i] = [];
+      for (let j = 0; j < N; j++) {
+        const cell = document.createElement('div');
+        cell.classList.add('cell');
+        if ((i + j) % 2 === 0) cell.classList.add('white');
+        else cell.classList.add('black');
+        cell.textContent = '';
+        boardDiv.appendChild(cell);
+        cells[i][j] = cell;
+      }
+    }
+  }
+
+  function updateLegend() {
+    if (N === 8) {
+      legend.classList.add('large');
+    } else {
+      legend.classList.remove('large');
+    }
+  }
+
+  function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+  }
+
+  function isSafe(board, row, col) {
+    for (let i = 0; i < row; i++) {
+      if (board[i][col] === 1) return false;
+    }
+    for (let i = row -1, j = col -1; i >= 0 && j >= 0; i--, j--) {
+      if (board[i][j] === 1) return false;
+    }
+    for (let i = row -1, j = col +1; i >= 0 && j < N; i--, j++) {
+      if (board[i][j] === 1) return false;
+    }
+    return true;
+  }
+
+  async function solveNQueens(board, row) {
+    if (row === N) return true;
+    for (let col = 0; col < N; col++) {
+      cells[row][col].classList.add('trying');
+      await sleep(200);
+      if (isSafe(board, row, col)) {
+        board[row][col] = 1;
+        cells[row][col].classList.remove('trying');
+        cells[row][col].classList.add('queen');
+        cells[row][col].textContent = '♕';
+        await sleep(200);
+        if (await solveNQueens(board, row + 1)) return true;
+        board[row][col] = 0;
+        cells[row][col].classList.remove('queen');
+        cells[row][col].classList.add('backtracked');
+        cells[row][col].textContent = '';
+        message.classList.add('show');
+        await sleep(200);
+        message.classList.remove('show');
+        await sleep(200);
+        cells[row][col].classList.remove('backtracked');
+      }
+      cells[row][col].classList.remove('trying');
+    }
+    return false;
+  }
+
+  async function startSolving() {
+    startBtn.disabled = true;
+    N = parseInt(nSelect.value);
+    updateLegend();
+    createBoard();
+    board = Array.from({ length: N }, () => Array(N).fill(0));
+    const solved = await solveNQueens(board, 0);
+    if (solved) alert(`Solution found for N = ${N}!`);
+    else alert(`No solution exists for N = ${N}`);
+    startBtn.disabled = false;
+  }
+
+  updateLegend();
+  createBoard();
+  startBtn.addEventListener('click', startSolving);
+  nSelect.addEventListener('change', () => {
+    N = parseInt(nSelect.value);
+    updateLegend();
+    createBoard();
+  });
+</script>
+
+</body>
+</html>

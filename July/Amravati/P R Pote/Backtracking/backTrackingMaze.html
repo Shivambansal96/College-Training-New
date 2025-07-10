@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Backtracking Maze Visualizer</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f0f0f0; margin: 0;}
+    h1 { text-align: center; }
+    #container { display: flex; justify-content: center; align-items: flex-start; gap: 40px; padding: 20px;}
+    #maze { display: grid; grid-template-columns: repeat(4, 80px); gap: 5px; margin-top: 10px;}
+    .cell {
+      width: 80px; height: 80px; display: flex; align-items: center; justify-content: center;
+      border: 2px solid #999; font-weight: bold; font-size: 24px; box-sizing: border-box; user-select: none;
+      transition: background 0.3s;
+    }
+    .start { background: #4caf50; color: white; }
+    .end { background: #e91e63; color: white; }
+    .wall { background: #333; color: white; }
+    .path { background: #03a9f4; color: white; }
+    .visited { background: #ffc107; color: black; }
+    .deadend { background: #aaa; color: white; }
+    .solution { background: #ff9800; color: white; }
+    #legend { font-size: 18px; }
+    .legend-item { display: flex; align-items: center; margin: 8px 0;}
+    .color-box { width: 24px; height: 24px; margin-right: 10px; border: 1px solid #000;}
+    button { padding: 10px 20px; font-size: 18px; margin-top: 20px; cursor: pointer;}
+  </style>
+</head>
+<body>
+  <h1>Backtracking Maze Visualizer</h1>
+  <div id="container">
+    <div>
+      <div id="maze"></div>
+      <button onclick="startSolving()" id="startBtn">Start Solving</button>
+    </div>
+    <div id="legend">
+      <h2>Legend</h2>
+      <div class="legend-item"><div class="color-box" style="background:#4caf50"></div>Start</div>
+      <div class="legend-item"><div class="color-box" style="background:#e91e63"></div>End</div>
+      <div class="legend-item"><div class="color-box" style="background:#333"></div>Wall</div>
+      <div class="legend-item"><div class="color-box" style="background:#03a9f4"></div>Path Being Tried</div>
+      <div class="legend-item"><div class="color-box" style="background:#ffc107"></div>Visited (Backtracked)</div>
+      <div class="legend-item"><div class="color-box" style="background:#aaa"></div>Dead End</div>
+      <div class="legend-item"><div class="color-box" style="background:#ff9800"></div>Final Solution Path</div>
+    </div>
+  </div>
+  <script>
+    const mazeData = [
+      ['S', '.', '.', '.'],
+      ['#', '#', '.', '#'],
+      ['.', '.', '.', '#'],
+      ['#', '#', '.', 'E']
+    ];
+    const rows = mazeData.length;
+    const cols = mazeData[0].length;
+    const mazeDiv = document.getElementById('maze');
+    const cells = [];
+    let solution = [];
+
+    function createMaze() {
+      mazeDiv.innerHTML = '';
+      cells.length = 0;
+      for (let i = 0; i < rows; i++) {
+        cells[i] = [];
+        for (let j = 0; j < cols; j++) {
+          const cell = document.createElement('div');
+          cell.className = 'cell';
+          cell.textContent = mazeData[i][j];
+          if (mazeData[i][j] === 'S') cell.classList.add('start');
+          else if (mazeData[i][j] === 'E') cell.classList.add('end');
+          else if (mazeData[i][j] === '#') cell.classList.add('wall');
+          mazeDiv.appendChild(cell);
+          cells[i][j] = cell;
+        }
+      }
+    }
+
+    function sleep(ms) {
+      return new Promise(resolve => setTimeout(resolve, ms));
+    }
+
+    async function solveMaze(x, y, visited, path) {
+      if (x < 0 || y < 0 || x >= rows || y >= cols) return false;
+      if (mazeData[x][y] === '#' || visited[x][y]) return false;
+
+      visited[x][y] = true;
+      path.push([x, y]);
+
+      if (mazeData[x][y] !== 'S' && mazeData[x][y] !== 'E') {
+        cells[x][y].classList.add('path');
+        await sleep(700);
+      }
+
+      if (mazeData[x][y] === 'E') {
+        solution = path.slice();
+        return true;
+      }
+
+      let found = false;
+      for (const [dx, dy] of [[0,1],[1,0],[0,-1],[-1,0]]) {
+        if (await solveMaze(x + dx, y + dy, visited, path)) {
+          found = true;
+          break;
+        }
+      }
+
+      if (!found && mazeData[x][y] !== 'S' && mazeData[x][y] !== 'E') {
+        cells[x][y].classList.remove('path');
+        cells[x][y].classList.add('deadend');
+        await sleep(400);
+      } else if (mazeData[x][y] !== 'S' && mazeData[x][y] !== 'E') {
+        cells[x][y].classList.remove('path');
+        cells[x][y].classList.add('visited');
+        await sleep(200);
+      }
+
+      visited[x][y] = false;
+      path.pop();
+      return found;
+    }
+
+    async function startSolving() {
+      document.getElementById('startBtn').disabled = true;
+      createMaze();
+      solution = [];
+      const visited = Array.from({ length: rows }, () => Array(cols).fill(false));
+      await solveMaze(0, 0, visited, []);
+      if (solution.length) {
+        for (const [x, y] of solution) {
+          if (mazeData[x][y] !== 'S' && mazeData[x][y] !== 'E') {
+            cells[x][y].classList.remove('visited', 'deadend');
+            cells[x][y].classList.add('solution');
+            await sleep(200);
+          }
+        }
+        alert('Maze Solved! Final path highlighted.');
+      } else {
+        alert('No solution found!');
+      }
+      document.getElementById('startBtn').disabled = false;
+    }
+
+    createMaze();
+  </script>
+</body>
+</html>
