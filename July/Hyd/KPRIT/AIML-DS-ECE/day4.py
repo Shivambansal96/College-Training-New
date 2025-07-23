@@ -58,24 +58,24 @@
 # print(len(mySet))
 
 
-text1 = "Python is a great programming language"
-text2 = "Many developers love the python language"
+# text1 = "Python is a great programming language"
+# text2 = "Many developers love the python language"
 
-mySet1 = set(text1.lower().split())
-mySet2 = set(text2.lower().split())
+# mySet1 = set(text1.lower().split())
+# mySet2 = set(text2.lower().split())
 
-aNb = mySet1.intersection(mySet2)
-Difference = mySet1.difference(mySet2)
-aUb = mySet1.union(mySet2)
-Equal_Difference = mySet1.symmetric_difference(mySet2)
+# aNb = mySet1.intersection(mySet2)
+# Difference = mySet1.difference(mySet2)
+# aUb = mySet1.union(mySet2)
+# Equal_Difference = mySet1.symmetric_difference(mySet2)
 
-print(aNb)
-print(Difference)
-print(aUb)
-print(Equal_Difference)
+# print(aNb)
+# print(Difference)
+# print(aUb)
+# print(Equal_Difference)
 
-# a = "-".join(Equal_Difference)
-# print(a)
+# # a = "-".join(Equal_Difference)
+# # print(a)
 
 
 

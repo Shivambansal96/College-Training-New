@@ -110,11 +110,11 @@
 #     print(i, end=" ")
 
 
-myList = []
-for i in range(1, 11):
-    myList.append(i*i)
-print(myList)
-target = 810
+# myList = []
+# for i in range(1, 11):
+#     myList.append(i*i)
+# print(myList)
+# target = 810
 # # METHOD 1
 # for i in range(len(myList)):
 #     if myList[i] == target:
