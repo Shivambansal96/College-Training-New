@@ -107,6 +107,10 @@ def factorial(n):
 
 n = 5
 r = 2
-print(factorial(n)//factorial(n-r))
+
+num = factorial(n)
+denom = factorial(n - r) * factorial(r)
+fact = num / denom
+print(fact)
 
 
