@@ -1,0 +1,4 @@
+hi everyone.
+we are learning file handling i/o
+using JavaScript
+i like programming in JavaScript.
