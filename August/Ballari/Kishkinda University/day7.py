@@ -119,30 +119,29 @@
 
 # from abc import ABC, abstractmethod
 
-# class Animal:
-    
-#     def __init__(self):
-#         pass
+# class Animal(ABC):
 
 #     @abstractmethod
 #     def sound(self):
-#         print("Animal makes a sound")
+#         pass
 
 # class Dog:
 
-#     def sound(self):
+#     def noise(self):
 #         print("Dog Barks")
+
+#     # def sound(self):
+#     #     print("Dog Barks")
 
 # class Cat:
 
 #     def sound(self):
 #         print("Cat Meows")
 
-# a1 = Animal()
-# a1.sound()
+# a1 = Animal() # # This will give an error since abstract class cannot be created as an object, it cannot become  areal world entity
 
 # d1 = Dog()
-# d1.sound()
+# d1.noise()
 
 # c1 = Cat()
 # c1.sound()
@@ -216,30 +215,33 @@
 
 
 
-class Account:
-    def __init__(self, accNo, balance):
-        self.bal = balance
-        self.accNum = accNo
+# class Account:
+#     def __init__(self, accNo, balance):
+#         self.bal = balance
+#         self.accNum = accNo
 
-    def debit(self, amount):
-        if(self.bal >= amount):
-            self.bal -= amount
-            print(f"Rs {amount} has been debited.")
-        else:
-            print("Insufficient Balance")
-            self.get_balance()
+#     def debit(self, amount):
+#         if(self.bal >= amount):
+#             self.bal -= amount
+#             print(f"Rs {amount} has been debited.")
+#         else:
+#             print("Insufficient Balance")
+#             self.get_balance()
 
-    def credit(self, amount):
-        self.bal += amount
-        print(f"Rs {amount} has been credited.")
+#     def credit(self, amount):
+#         self.bal += amount
+#         print(f"Rs {amount} has been credited.")
 
-    def get_balance(self):
-        print(f"Total Balance = Rs {self.bal}")
+#     def get_balance(self):
+#         print(f"Total Balance = Rs {self.bal}")
 
 
-a1 = Account(14380100115559, 3_00_000)
-# print(a1.accNum)
-# print(a1.bal)
-a1.debit(10_00_000)
-print()
-a1.credit(50_000)
+# a1 = Account(14380100115559, 3_00_000)
+# # print(a1.accNum)
+# # print(a1.bal)
+# a1.debit(10_00_000)
+# print()
+# a1.credit(50_000)
+
+
+
